@@ -28,7 +28,7 @@ const ConnectButton = styled.button`
 const NavBar = ({ wallet, connectWallet }) => {
   return (
     <Container>
-      <a href="http://localhost:3000/">
+      <a href="https://ajmasta.github.io/unitopia/">
         <img
           src={icePlanet}
           style={{ width: "55px", marginLeft: "10px" }}
