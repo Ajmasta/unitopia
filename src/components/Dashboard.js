@@ -138,24 +138,24 @@ const DashBoard = ({ contract, wallet }) => {
                       </Button>
                     </DetailsContainer>
                   </>
-                ) : action === "" ? (
+                ) : !action.includes(i) ? (
                   <DetailsContainer>
                     <FunctionsContainer>
                       <Button
                         style={{ fontSize: "16px" }}
-                        onClick={() => setAction("Transfer From")}
+                        onClick={() => setAction(`Transfer From${i}`)}
                       >
                         Transfer From
                       </Button>
                       <Button
                         style={{ fontSize: "16px" }}
-                        onClick={() => setAction("Approve")}
+                        onClick={() => setAction(`Approve${i}`)}
                       >
                         Approve
                       </Button>
                       <Button
                         style={{ fontSize: "16px" }}
-                        onClick={() => setAction("Burn")}
+                        onClick={() => setAction(`Burn${i}`)}
                       >
                         Burn
                       </Button>
@@ -182,7 +182,7 @@ const DashBoard = ({ contract, wallet }) => {
                         style={{ fontSize: "16px" }}
                         onClick={() => actionManager(planet.id)}
                       >
-                        {action}
+                        {action.slice(0, action.length - 1)}
                       </Button>
                     </FunctionsContainer>
                     <Button
