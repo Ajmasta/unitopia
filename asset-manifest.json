@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/unitopia/static/css/main.aec9f3a0.css",
-    "main.js": "/unitopia/static/js/main.b8d340e7.js",
+    "main.js": "/unitopia/static/js/main.8d50fdd0.js",
     "static/js/787.e0a67b23.chunk.js": "/unitopia/static/js/787.e0a67b23.chunk.js",
     "static/media/planet2.gif": "/unitopia/static/media/planet2.d9a73bd6b072a2cf9ee9.gif",
     "static/media/SpaceBackground3.png": "/unitopia/static/media/SpaceBackground3.822d7b8c150a16a4aa59.png",
@@ -10,11 +10,11 @@
     "static/media/icePlanet.png": "/unitopia/static/media/icePlanet.ece2ec1d4140821af16d.png",
     "index.html": "/unitopia/index.html",
     "main.aec9f3a0.css.map": "/unitopia/static/css/main.aec9f3a0.css.map",
-    "main.b8d340e7.js.map": "/unitopia/static/js/main.b8d340e7.js.map",
+    "main.8d50fdd0.js.map": "/unitopia/static/js/main.8d50fdd0.js.map",
     "787.e0a67b23.chunk.js.map": "/unitopia/static/js/787.e0a67b23.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aec9f3a0.css",
-    "static/js/main.b8d340e7.js"
+    "static/js/main.8d50fdd0.js"
   ]
 }
