@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Gas Giant",
+    "chanceOfLife": "2",
+    "ressources": "High",
+    "mainRessource": "Hydrogen",
+    "size": "Big",
+    "ancientArtifacts": "30",
+    "suns": 2,
+    "imageUrl": "https://i.imgur.com/HNZr12s.png"
+  },
+  {
+    "name": "Dry Planet",
+    "chanceOfLife": "10",
+    "ressources": "Low",
+    "mainRessource": "Sand",
+    "size": "Medium",
+    "ancientArtifacts": "60",
+    "suns": 4,
+    "imageUrl": "https://i.imgur.com/sYHDwav.png"
+  },
+  {
+    "name": "Ice Planet",
+    "chanceOfLife": "8",
+    "ressources": "High",
+    "mainRessource": "Water",
+    "size": "Small",
+    "ancientArtifacts": "80",
+    "suns": 1,
+    "imageUrl": "https://i.imgur.com/kV8iYax.png"
+  },
+  {
+    "name": "Island Planet",
+    "chanceOfLife": "70",
+    "ressources": "Medium",
+    "mainRessource": "Carbon",
+    "size": "Medium",
+    "ancientArtifacts": "40",
+    "suns": 1,
+    "imageUrl": "https://i.imgur.com/JswBtpc.png"
+  },
+  {
+    "name": "Lava Planet",
+    "chanceOfLife": "1",
+    "ressources": "High",
+    "mainRessource": "Silicon",
+    "size": "Big",
+    "ancientArtifacts": "30",
+    "suns": 6,
+    "imageUrl": "https://i.imgur.com/pWhz4gt.png"
+  },
+  {
+    "name": "No Atmosphere Planet",
+    "chanceOfLife": "1",
+    "ressources": "High",
+    "mainRessource": "Rocks",
+    "size": "Small",
+    "ancientArtifacts": "45",
+    "suns": 2,
+    "imageUrl": "https://i.imgur.com/M471VFo.png"
+  },
+  {
+    "name": "Radioactive Planet",
+    "chanceOfLife": "4",
+    "ressources": "High",
+    "mainRessource": "Uranium",
+    "size": "Medium",
+    "ancientArtifacts": "60",
+    "suns": 2,
+    "imageUrl": "https://i.imgur.com/NYcKeHg.png"
+  },
+  {
+    "name": "Purple Planet",
+    "chanceOfLife": "50",
+    "ressources": "Medium",
+    "mainRessource": "Iodine",
+    "size": "Big",
+    "ancientArtifacts": "35",
+    "suns": 2,
+    "imageUrl": "https://i.imgur.com/hdYSvNn.png"
+  },
+  {
+    "name": "Yellow Planet",
+    "chanceOfLife": "35",
+    "ressources": "High",
+    "mainRessource": "Sulfur",
+    "size": "Small",
+    "ancientArtifacts": "50",
+    "suns": 1,
+    "imageUrl": "https://i.imgur.com/1YdE9PG.png"
+  },
+  {
+    "name": "Unknown Planet",
+    "chanceOfLife": "??",
+    "ressources": "??",
+    "mainRessource": "??",
+    "size": "??",
+    "ancientArtifacts": "??",
+    "suns": "??",
+    "imageUrl": "https://i.imgur.com/WOVaRpj.png"
+  }
+]

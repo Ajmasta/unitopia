@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.OldSchool {
+font-family:"VT323";
+
+}
+.vanish{
+  animation:vanish 0.3s forwards;
+}
+@keyframes vanish{
+  0%{opacity:1;}
+  100%{opacity:0;}
+}
+@keyframes appear{
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
