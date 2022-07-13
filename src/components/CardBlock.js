@@ -2,9 +2,8 @@ import styled from "styled-components";
 import tile from "../assets/cardBackground.png";
 import { useState } from "react";
 import { ethers } from "ethers";
-
 import planets from "../planets.json";
-import { contractAbi, contractAddress } from "../utils/contractInfo";
+
 const Card = styled.div`
   height: 500px;
   width: 300px;

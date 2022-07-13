@@ -4,7 +4,8 @@ import TitleBlock from "./components/TitleBlock";
 import { ethers } from "ethers";
 import NavBar from "./components/NavBar";
 import CardBlock from "./components/CardBlock";
-import { contractAbi, contractAddress } from "./utils/contractInfo";
+import { contractAddress } from "./utils/contractInfo";
+import contractJson from "./utils/contract.json";
 function App() {
   const [store, setStore] = useState(false);
   const [dashboard, setDashboard] = useState(false);
@@ -23,7 +24,7 @@ function App() {
         const signerObject = providerObject.getSigner();
         const contractObject = new ethers.Contract(
           contractAddress,
-          contractAbi,
+          contractJson.abi,
           signerObject
         );
 
