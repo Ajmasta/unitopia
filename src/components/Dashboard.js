@@ -35,7 +35,7 @@ const DashBoard = ({ contract, wallet }) => {
     const checkNFT = async () => {
       console.log(wallet);
       const number = await contract.balanceOf(wallet);
-      const array = [];
+      let array = [];
       for (let i = 0; i < number.toNumber(); i++) {
         let ownedPlanets = await contract.tokenOfOwnerByIndex(wallet, i);
         let url = await contract.tokenURI(ownedPlanets.toNumber());
@@ -43,6 +43,7 @@ const DashBoard = ({ contract, wallet }) => {
         data = { ...data, id: ownedPlanets.toNumber() };
         array.push(data);
       }
+
       console.log(number);
       console.log(array);
       setTokensArray(array);
@@ -100,7 +101,7 @@ const DashBoard = ({ contract, wallet }) => {
               {amountOwned > 1 ? "planets" : "planet"}
             </p>
           ) : (
-            ""
+            <p style={{ color: "white" }}>Loading your planets...</p>
           )}
           <CardContainer>
             {tokensArray?.map((planet, i) => (
