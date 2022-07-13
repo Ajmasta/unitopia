@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import CardBlock from "./components/CardBlock";
 import { contractAddress } from "./utils/contractInfo";
 import contractJson from "./utils/contract.json";
+import DashBoard from "./components/Dashboard";
 function App() {
   const [store, setStore] = useState(false);
   const [dashboard, setDashboard] = useState(false);
@@ -70,7 +71,7 @@ function App() {
             contract={contract}
           />
         ) : dashboard ? (
-          "dashboard"
+          <DashBoard wallet={wallet} contract={contract} />
         ) : (
           ""
         )}

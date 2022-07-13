@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ethers } from "ethers";
 import planets from "../planets.json";
 
-const Card = styled.div`
+export const Card = styled.div`
   height: 500px;
   width: 300px;
   border-radius: 10px;
@@ -17,7 +17,7 @@ const Card = styled.div`
   background: url(${tile});
   box-shadow: 2px 2px 5px black;
 `;
-const CardImageContainer = styled.div`
+export const CardImageContainer = styled.div`
   height: 250px;
   width: 300px;
   padding-bottom: 10px;
@@ -27,21 +27,21 @@ const CardImageContainer = styled.div`
     transform: scale(1.2);
   }
 `;
-const PlanetImage = styled.img`
+export const PlanetImage = styled.img`
   max-width: 100%;
   max-height: 100%;
 `;
-const CardContainer = styled.div`
+export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   max-width: 1200px;
 `;
-const DetailsContainer = styled.div`
+export const DetailsContainer = styled.div`
   height: 100%;
   width: 100%;
 `;
-const CharacteristicsContainer = styled.div`
+export const CharacteristicsContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -50,7 +50,7 @@ const CharacteristicsContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const CharContainer = styled.div`
+export const CharContainer = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -67,16 +67,16 @@ const CharContainer = styled.div`
     transform: scale(1.1);
   }
 `;
-const CharacteristicValue = styled.p`
+export const CharacteristicValue = styled.p`
   font-size: 14px;
   margin: 0;
 `;
 
-const CharacteristicName = styled.p`
+export const CharacteristicName = styled.p`
   font-size: 12px;
   margin: 0;
 `;
-const Button = styled.button`
+export const Button = styled.button`
   padding: 10px;
   border-radius: 15px;
   font-size: 26px;
@@ -101,12 +101,16 @@ const Subtitle = styled.p`
   margin-bottom: 20px;
 `;
 const CardBlock = ({ wallet, connectWallet, getContract, contract }) => {
-  const mintCall = async () => {
+  const mintCall = async (i) => {
     if (!wallet) await connectWallet();
     if (wallet) {
       console.log(contract, "CONTRACT");
+      console.log(wallet);
       const balance = await contract.balanceOf(wallet);
       console.log("balance", balance);
+      const mint = await contract.mintPlanet(i, {
+        value: ethers.utils.parseEther("0.02"),
+      });
     }
   };
   return (
@@ -153,7 +157,7 @@ const CardBlock = ({ wallet, connectWallet, getContract, contract }) => {
                   <CharacteristicName>Suns</CharacteristicName>
                 </CharContainer>
               </CharacteristicsContainer>
-              <Button className={"OldSchool"} onClick={mintCall}>
+              <Button className={"OldSchool"} onClick={() => mintCall(i)}>
                 Mint
               </Button>
             </DetailsContainer>
