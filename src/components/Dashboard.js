@@ -80,14 +80,15 @@ const DashBoard = ({ contract, wallet }) => {
 
   const actionManager = (id) => {
     console.log(addressTo);
+    const actionSliced = action.slice(0, action.length - 1);
 
-    if (action === "Transfer From") {
+    if (actionSliced === "Transfer From") {
       transferFrom(addressTo, id);
     }
-    if (action === "Approve") {
+    if (actionSliced === "Approve") {
       approveNFT(addressTo, id);
     }
-    if (action === "Burn") {
+    if (actionSliced === "Burn") {
       burn(id);
     }
   };
@@ -170,7 +171,7 @@ const DashBoard = ({ contract, wallet }) => {
                 ) : (
                   <DetailsContainer>
                     <FunctionsContainer>
-                      {action !== "Burn" ? (
+                      {action.slice(0, action.length - 1) !== "Burn" ? (
                         <input
                           placeholder="Address to interact with"
                           onChange={(e) => setAddressTo(e.target.value)}
