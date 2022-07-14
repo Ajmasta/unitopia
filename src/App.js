@@ -16,6 +16,35 @@ function App() {
   const [signer, setSigner] = useState(null);
   const [contract, setContract] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // The "any" network will allow spontaneous network changes
+    const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
+    provider.on("network", (newNetwork, oldNetwork) => {
+      // When a Provider makes its initial connection, it emits a "network"
+      // event with a null oldNetwork along with the newNetwork. So, if the
+      // oldNetwork exists, it represents a changing network
+      if (oldNetwork) {
+        window.location.reload();
+      }
+    });
+    checkNetwork();
+  }, []);
+
+  const checkNetwork = async () => {
+    try {
+      if (window.ethereum.networkVersion !== "4") {
+        console.log("issue");
+        await window.ethereum.request({
+          method: "wallet_switchEthereumChain",
+          params: [{ chainId: "0x3" }], // chainId must be in hexadecimal numbers
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     const getProvider = async () => {
       try {
