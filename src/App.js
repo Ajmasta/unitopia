@@ -16,6 +16,7 @@ function App() {
   const [signer, setSigner] = useState(null);
   const [contract, setContract] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [badNetwork, setBadNetwork] = useState(false);
 
   useEffect(() => {
     // The "any" network will allow spontaneous network changes
@@ -24,6 +25,9 @@ function App() {
       // When a Provider makes its initial connection, it emits a "network"
       // event with a null oldNetwork along with the newNetwork. So, if the
       // oldNetwork exists, it represents a changing network
+      if (newNetwork.chainId === 3) {
+        setBadNetwork(false);
+      }
       if (oldNetwork) {
         window.location.reload();
       }
@@ -34,7 +38,7 @@ function App() {
   const checkNetwork = async () => {
     try {
       if (window.ethereum.networkVersion !== "4") {
-        console.log("issue");
+        setBadNetwork(true);
         await window.ethereum.request({
           method: "wallet_switchEthereumChain",
           params: [{ chainId: "0x3" }], // chainId must be in hexadecimal numbers
@@ -85,6 +89,9 @@ function App() {
           <h3 style={{ color: "red" }}>You need metamask to use this app!</h3>
         ) : (
           ""
+        )}
+        {badNetwork && (
+          <h3 style={{ color: "red" }}>Please switch to the Ropsten testnet</h3>
         )}
         {!store && !dashboard ? (
           <TitleBlock
