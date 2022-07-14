@@ -102,12 +102,14 @@ const Subtitle = styled.p`
 `;
 const CardBlock = ({ wallet, connectWallet, getContract, contract }) => {
   const mintCall = async (i) => {
-    if (!wallet) await connectWallet();
+    if (!wallet) {
+      await connectWallet();
+
+      const mint = await contract.mintPlanet(i, {
+        value: ethers.utils.parseEther("0.02"),
+      });
+    }
     if (wallet) {
-      console.log(contract, "CONTRACT");
-      console.log(wallet);
-      const balance = await contract.balanceOf(wallet);
-      console.log("balance", balance);
       const mint = await contract.mintPlanet(i, {
         value: ethers.utils.parseEther("0.02"),
       });
