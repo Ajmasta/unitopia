@@ -1,0 +1,142 @@
+[
+  {
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "name": "Gas Giant",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "2" },
+      { "trait_type": "Ressources", "value": "High" },
+      { "trait_type": "Main Ressource", "value": "Hydrogen" },
+      { "trait_type": "Size", "value": "Big" },
+      { "trait_type": "Ancient Artifacts", "value": "30" },
+      { "trait_type": "Suns", "value": 2 }
+    ],
+    "backgroundColor": "000000",
+    "image": "https://i.imgur.com/HNZr12s.png"
+  },
+  {
+    "name": "Dry Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "10" },
+      { "trait_type": "Ressources", "value": "Low" },
+      { "trait_type": "Main Ressource", "value": "Sand" },
+      { "trait_type": "Size", "value": "Medium" },
+      { "trait_type": "Ancient Artifacts", "value": "60" },
+      { "trait_type": "Suns", "value": 4 }
+    ],
+    "image": "https://i.imgur.com/sYHDwav.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "Ice Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "8" },
+      { "trait_type": "Ressources", "value": "High" },
+      { "trait_type": "Main Ressource", "value": "Water" },
+      { "trait_type": "Size", "value": "Small" },
+      { "trait_type": "Ancient Artifacts", "value": "80" },
+      { "trait_type": "Suns", "value": 1 }
+    ],
+    "image": "https://i.imgur.com/kV8iYax.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "Island Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "70" },
+      { "trait_type": "Ressources", "value": "Medium" },
+      { "trait_type": "Main Ressource", "value": "Carbon" },
+      { "trait_type": "Size", "value": "Medium" },
+      { "trait_type": "Ancient Artifacts", "value": "40" },
+      { "trait_type": "Suns", "value": 1 }
+    ],
+    "image": "https://i.imgur.com/JswBtpc.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "Lava Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "1" },
+      { "trait_type": "Ressources", "value": "High" },
+      { "trait_type": "Main Ressource", "value": "Silicon" },
+      { "trait_type": "Size", "value": "Big" },
+      { "trait_type": "Ancient Artifacts", "value": "30" },
+      { "trait_type": "Suns", "value": 6 }
+    ],
+    "image": "https://i.imgur.com/pWhz4gt.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "No Atmosphere Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "1" },
+      { "trait_type": "Ressources", "value": "High" },
+      { "trait_type": "Main Ressource", "value": "Rocks" },
+      { "trait_type": "Size", "value": "Small" },
+      { "trait_type": "Ancient Artifacts", "value": "45" },
+      { "trait_type": "Suns", "value": 2 }
+    ],
+    "image": "https://i.imgur.com/M471VFo.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "Radioactive Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "4" },
+      { "trait_type": "Ressources", "value": "High" },
+      { "trait_type": "Main Ressource", "value": "Uranium" },
+      { "trait_type": "Size", "value": "Medium" },
+      { "trait_type": "Ancient Artifacts", "value": "60" },
+      { "trait_type": "Suns", "value": 2 }
+    ],
+    "image": "https://i.imgur.com/NYcKeHg.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "Purple Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "50" },
+      { "trait_type": "Ressources", "value": "Medium" },
+      { "trait_type": "Main Ressource", "value": "Iodine" },
+      { "trait_type": "Size", "value": "Big" },
+      { "trait_type": "Ancient Artifacts", "value": "35" },
+      { "trait_type": "Suns", "value": 2 }
+    ],
+    "image": "https://i.imgur.com/hdYSvNn.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "Yellow Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "35" },
+      { "trait_type": "Ressources", "value": "High" },
+      { "trait_type": "Main Ressource", "value": "Sulfur" },
+      { "trait_type": "Size", "value": "Small" },
+      { "trait_type": "Ancient Artifacts", "value": "50" },
+      { "trait_type": "Suns", "value": 1 }
+    ],
+    "image": "https://i.imgur.com/1YdE9PG.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  },
+  {
+    "name": "Unknown Planet",
+    "attributes": [
+      { "trait_type": "Chance of Life", "value": "??" },
+      { "trait_type": "Ressources", "value": "??" },
+      { "trait_type": "Main Ressource", "value": "??" },
+      { "trait_type": "Size", "value": "??" },
+      { "trait_type": "Ancient Artifacts", "value": "??" },
+      { "trait_type": "Suns", "value": "??" }
+    ],
+    "image": "https://i.imgur.com/WOVaRpj.png",
+    "description": "Welcome to Unitopia. Start with a planet, and slowly build your intergalatic empire.",
+    "backgroundColor": "000000"
+  }
+]

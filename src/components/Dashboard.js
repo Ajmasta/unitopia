@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-
+import metadata from "../metadata.json";
 import {
   Button,
   Card,
@@ -39,7 +39,7 @@ const DashBoard = ({ contract, wallet }) => {
       for (let i = 0; i < number.toNumber(); i++) {
         let ownedPlanets = await contract.tokenOfOwnerByIndex(wallet, i);
         let url = await contract.tokenURI(ownedPlanets.toNumber());
-        let data = await (await fetch(url)).json();
+        let data = metadata[url.slice(url.length - 1)];
         data = { ...data, id: ownedPlanets.toNumber() };
         array.push(data);
       }
