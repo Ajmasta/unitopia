@@ -32,6 +32,7 @@ const DashBoard = ({ contract, wallet }) => {
   const [addressTo, setAddressTo] = useState("");
   const [action, setAction] = useState("");
   const [loading, setLoading] = useState(false);
+  const [addressFrom, setAddressFrom] = useState("");
   useEffect(() => {
     const checkNFT = async () => {
       console.log(wallet);
@@ -75,12 +76,16 @@ const DashBoard = ({ contract, wallet }) => {
   const approveNFT = async (_to, i) => {
     const approve = await contract["approve(address,uint256)"](_to, i);
   };
-  const transferFrom = async (_to, i) => {
+  const transferFrom = async (_from, _to, i) => {
     console.log(wallet, _to, i);
-    const transferFrom = await contract[
-      "safeTransferFrom(address,address,uint256)"
-    ](wallet, _to, i);
+    await contract["safeTransferFrom(address,address,uint256)"](_from, _to, i);
   };
+
+  const transfer = async (_to, i) => {
+    console.log(wallet, _to, i);
+    await contract["safeTransferFrom(address,address,uint256)"](wallet, _to, i);
+  };
+
   const burn = async (i) => {
     const burn = await contract["burn(uint256)"](i);
   };
@@ -89,8 +94,11 @@ const DashBoard = ({ contract, wallet }) => {
     console.log(addressTo);
     const actionSliced = action.slice(0, action.length - 1);
 
+    if (actionSliced === "Transfer") {
+      transfer(addressTo, id);
+    }
     if (actionSliced === "Transfer From") {
-      transferFrom(addressTo, id);
+      transferFrom(addressFrom, addressTo, id);
     }
     if (actionSliced === "Approve") {
       approveNFT(addressTo, id);
@@ -163,6 +171,12 @@ const DashBoard = ({ contract, wallet }) => {
                     <FunctionsContainer>
                       <Button
                         style={{ fontSize: "16px" }}
+                        onClick={() => setAction(`Transfer${i}`)}
+                      >
+                        Transfer
+                      </Button>
+                      <Button
+                        style={{ fontSize: "16px" }}
                         onClick={() => setAction(`Transfer From${i}`)}
                       >
                         Transfer From
@@ -190,14 +204,24 @@ const DashBoard = ({ contract, wallet }) => {
                 ) : (
                   <DetailsContainer>
                     <FunctionsContainer>
+                      {action.slice(0, action.length - 1) ===
+                      "Transfer From" ? (
+                        <input
+                          placeholder="From address"
+                          onChange={(e) => setAddressFrom(e.target.value)}
+                        />
+                      ) : (
+                        ""
+                      )}
                       {action.slice(0, action.length - 1) !== "Burn" ? (
                         <input
-                          placeholder="Address to interact with"
+                          placeholder="To address"
                           onChange={(e) => setAddressTo(e.target.value)}
                         />
                       ) : (
                         ""
                       )}
+
                       <Button
                         style={{ fontSize: "16px" }}
                         onClick={() => actionManager(planet.id)}

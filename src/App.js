@@ -65,10 +65,8 @@ function App() {
         setProvider(providerObject);
         setSigner(signerObject);
         setContract(contractObject);
-        provider.provider.on("accountsChanged", (accounts) => {
-          console.log("test");
-          setWallet(accounts[0]);
-        });
+
+        console.log(provider.provider.on);
       } catch (err) {}
       setLoading(false);
     };
@@ -79,6 +77,10 @@ function App() {
     if (provider) {
       const accounts = await provider.send("eth_requestAccounts", []);
       setWallet(accounts[0]);
+      provider.provider.on("accountsChanged", (accounts) => {
+        console.log("test");
+        setWallet(accounts[0]);
+      });
     } else {
       alert("Please install metamask!");
     }
