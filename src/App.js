@@ -65,6 +65,10 @@ function App() {
         setProvider(providerObject);
         setSigner(signerObject);
         setContract(contractObject);
+        provider.provider.on("accountsChanged", (accounts) => {
+          console.log("test");
+          setWallet(accounts[0]);
+        });
       } catch (err) {}
       setLoading(false);
     };
@@ -73,7 +77,6 @@ function App() {
 
   const connectWallet = async () => {
     if (provider) {
-      console.log("test");
       const accounts = await provider.send("eth_requestAccounts", []);
       setWallet(accounts[0]);
     } else {

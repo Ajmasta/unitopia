@@ -13,6 +13,7 @@ import {
   DetailsContainer,
   PlanetImage,
 } from "./CardBlock";
+import { Puff } from "react-loading-icons";
 
 const FunctionsContainer = styled.div`
   display: flex;
@@ -39,6 +40,12 @@ const DashBoard = ({ contract, wallet }) => {
       for (let i = 0; i < number.toNumber(); i++) {
         let ownedPlanets = await contract.tokenOfOwnerByIndex(wallet, i);
         let url = await contract.tokenURI(ownedPlanets.toNumber());
+
+        ///The following code fetches the data from the server, but our free host is too slow.
+        /*let data = await (await fetch(url)).json();
+        data = { ...data, id: ownedPlanets.toNumber() };
+        array.push(data);*/
+
         let data = metadata[url.slice(url.length - 1)];
         data = { ...data, id: ownedPlanets.toNumber() };
         array.push(data);
@@ -102,7 +109,19 @@ const DashBoard = ({ contract, wallet }) => {
               {amountOwned > 1 ? "planets" : "planet"}
             </p>
           ) : (
-            <p style={{ color: "white" }}>Loading your planets...</p>
+            <div
+              style={{
+                height: "100vh",
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Puff stroke={"#06bcee"} />
+              <p style={{ margin: 0, color: "#06bcee", fontWeight: 700 }}>
+                Loading
+              </p>
+            </div>
           )}
           <CardContainer>
             {tokensArray?.map((planet, i) => (
